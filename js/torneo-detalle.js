@@ -136,3 +136,42 @@ document.addEventListener("DOMContentLoaded", () => {
   renderizarPartidas();
 
   
+  // --- Tabla de posiciones ---
+  const cuerpoRanking = document.getElementById("cuerpo-ranking");
+  const rankingTorneo = rankings[torneo.id] || [];
+
+  if (rankingTorneo.length === 0) {
+    const fila = document.createElement("tr");
+    const celda = document.createElement("td");
+    celda.colSpan = 4;
+    celda.className = "estado-vacio";
+    celda.textContent = "La tabla de posiciones aún no tiene resultados validados.";
+    fila.appendChild(celda);
+    cuerpoRanking.appendChild(fila);
+  } else {
+    rankingTorneo.forEach((fila) => {
+      const tr = document.createElement("tr");
+      [fila.posicion, fila.participante, fila.puntos, fila.diferenciaPuntaje].forEach((valor) => {
+        const td = document.createElement("td");
+        td.textContent = valor;
+        tr.appendChild(td);
+      });
+      cuerpoRanking.appendChild(tr);
+    });
+  }
+
+  // --- Premios: solo si el torneo está finalizado ---
+  if (torneo.estado === "finalizado") {
+    const seccionPremios = document.getElementById("seccion-premios");
+    const listaPremios = document.getElementById("lista-premios");
+    const premiosTorneo = premios.filter((p) => p.torneoId === torneo.id).sort((a, b) => a.posicion - b.posicion);
+
+    seccionPremios.hidden = false;
+    if (premiosTorneo.length === 0) {
+      listaPremios.appendChild(crearElemento("li", { texto: "Los premios de este torneo aún no se han definido." }));
+    } else {
+      premiosTorneo.forEach((p) => {
+        listaPremios.appendChild(crearElemento("li", { texto: `Puesto ${p.posicion}: ${p.premio}` }));
+      });
+    }
+  }
