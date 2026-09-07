@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>eSports Arena Manager | Perfil de jugador</title>
+  <meta name="description" content="Ficha competitiva de un jugador: equipos, historial, estadísticas y sanciones." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="cabecera">
+    <div class="contenedor barra-navegacion">
+      <a href="index.html" class="marca">
+        <span class="marca__icono" aria-hidden="true">EA</span>
+        eSports Arena Manager
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="menu-principal">Menú</button>
+      <nav aria-label="Navegación principal">
+        <ul class="nav-lista" id="menu-principal">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="torneos.html">Torneos</a></li>
+          <li><a href="inscripcion.html">Inscripción</a></li>
+          <li><a href="equipo.html">Mi equipo</a></li>
+          <li><a href="perfil.html">Mi perfil</a></li>
+        </ul>
+      </nav>
+      <span class="perfil-rol">Perfil de prueba: Jugador</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="seccion contenedor">
+      <div class="seccion__titulo-grupo">
+        <h1>Perfil de jugador</h1>
+        <label for="selector-jugador" class="sr-solo">Selecciona un perfil de prueba</label>
+        <select id="selector-jugador" style="max-width:280px;"></select>
+      </div>
+
+      <div id="ficha-jugador">
+        <!-- Se genera dinámicamente con JavaScript -->
+      </div>
+
+      <div class="seccion" aria-labelledby="titulo-editar">
+        <h2 id="titulo-editar">Editar datos de la cuenta</h2>
+        <form class="formulario" id="form-perfil" novalidate>
+          <div class="campo">
+            <label for="campo-apodo">Apodo (gamertag)</label>
+            <input type="text" id="campo-apodo" name="apodo" required minlength="3" maxlength="15" autocomplete="username" />
+            <span class="ayuda">Sin espacios, entre 3 y 15 caracteres.</span>
+            <span class="mensaje-error" id="error-apodo" role="alert"></span>
+          </div>
+
+          <div class="campo">
+            <label for="campo-email-perfil">Correo electrónico</label>
+            <input type="email" id="campo-email-perfil" name="emailPerfil" required autocomplete="email" />
+            <span class="mensaje-error" id="error-email-perfil" role="alert"></span>
+          </div>
+
+          <div class="campo">
+            <label for="campo-password">Nueva contraseña</label>
+            <input type="password" id="campo-password" name="password" minlength="8" autocomplete="new-password" placeholder="Déjalo vacío para no cambiarla" />
+            <span class="ayuda">Mínimo 8 caracteres.</span>
+            <span class="mensaje-error" id="error-password" role="alert"></span>
+          </div>
+
+          <div class="campo">
+            <label for="campo-password-confirmacion">Confirmar nueva contraseña</label>
+            <input type="password" id="campo-password-confirmacion" name="passwordConfirmacion" autocomplete="new-password" />
+            <span class="mensaje-error" id="error-password-confirmacion" role="alert"></span>
+          </div>
+
+          <div class="alerta alerta--exito" id="alerta-perfil-guardado" role="status" hidden></div>
+
+          <div class="formulario__acciones">
+            <button type="submit" class="boton boton-primario">Guardar cambios</button>
+            <button type="reset" class="boton boton-secundario">Cancelar</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie-pagina">
+    <div class="contenedor pie-pagina__contenido">
+      <p>&copy; <span data-anio>2026</span> eSports Arena Manager. Proyecto académico Desarrollo FullStack II.</p>
+      <nav aria-label="Enlaces del pie de página">
+        <a href="equipo.html">Mi equipo</a> ·
+        <a href="torneos.html">Torneos</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/comun.js"></script>
+  <script src="js/perfil.js"></script>
+</body>
+</html>
