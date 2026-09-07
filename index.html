@@ -27,5 +27,67 @@
       <span class="perfil-rol">Perfil de prueba: Jugador</span>
     </div>
   </header>
+
+  <main>
+    <section class="hero">
+      <div class="contenedor hero__grid">
+        <div>
+          <p class="hero__eyebrow">Temporada 2026 en curso</p>
+          <h1>Organiza y compite en los torneos de eSports que importan</h1>
+          <p>
+            Consulta llaves, resultados y tablas de posiciones actualizadas, inscribe a tu equipo
+            y sigue tu trayectoria competitiva desde un mismo panel.
+          </p>
+          <div class="hero__cta">
+            <a class="boton boton-primario" href="torneos.html">Ver todos los torneos</a>
+            <a class="boton boton-secundario" href="inscripcion.html">Inscribir a mi equipo</a>
+          </div>
+        </div>
+        <div>
+          <figure class="video-envoltorio">
+            <video controls preload="metadata" poster="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower-poster.jpg">
+              <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm" type="video/webm" />
+              Tu navegador no admite la reproducción de video.
+            </video>
+            <figcaption class="texto-tenue" style="padding: 0.6rem 0.8rem;">
+              Resumen de la gran final de la Copa Fundación Valorion 2026.
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion contenedor" aria-labelledby="titulo-destacados">
+      <div class="seccion__titulo-grupo">
+        <h2 id="titulo-destacados">Torneos destacados</h2>
+        <p>Abiertos y en curso en este momento.</p>
+      </div>
+      <div class="grilla-tarjetas" id="lista-destacados">
+        
+      </div>
+    </section>
+
+    <section class="seccion contenedor" aria-labelledby="titulo-cierres">
+      <div class="seccion__titulo-grupo">
+        <h2 id="titulo-cierres">Próximos cierres de inscripción</h2>
+        <p>No dejes pasar el plazo para inscribir a tu equipo.</p>
+      </div>
+      <table>
+        <caption class="sr-solo">Próximos cierres de inscripción por torneo</caption>
+        <thead>
+          <tr>
+            <th scope="col">Torneo</th>
+            <th scope="col">Juego</th>
+            <th scope="col">Cierre de inscripción</th>
+            <th scope="col">Cupos</th>
+            <th scope="col"><span class="sr-solo">Acción</span></th>
+          </tr>
+        </thead>
+        <tbody id="cuerpo-cierres">
+          
+        </tbody>
+      </table>
+    </section>
+  </main>
 </body>
 </html>
