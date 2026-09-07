@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>eSports Arena Manager | Detalle de torneo</title>
+  <meta name="description" content="Información completa de un torneo: cupos, participantes, llaves, posiciones y premios." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="cabecera">
+    <div class="contenedor barra-navegacion">
+      <a href="index.html" class="marca">
+        <span class="marca__icono" aria-hidden="true">EA</span>
+        eSports Arena Manager
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="menu-principal">Menú</button>
+      <nav aria-label="Navegación principal">
+        <ul class="nav-lista" id="menu-principal">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="torneos.html">Torneos</a></li>
+          <li><a href="inscripcion.html">Inscripción</a></li>
+          <li><a href="equipo.html">Mi equipo</a></li>
+          <li><a href="perfil.html">Mi perfil</a></li>
+        </ul>
+      </nav>
+      <span class="perfil-rol">Perfil de prueba: Jugador</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="seccion contenedor">
+      <p><a href="torneos.html">&larr; Volver al listado de torneos</a></p>
+
+      <article id="detalle-torneo">
+        <!-- Datos generales generados dinámicamente -->
+      </article>
+
+      <div class="seccion" aria-labelledby="titulo-participantes">
+        <h2 id="titulo-participantes">Participantes inscritos</h2>
+        <ul id="lista-participantes"></ul>
+      </div>
+
+      <div class="seccion" aria-labelledby="titulo-llaves">
+        <h2 id="titulo-llaves">Calendario de partidas</h2>
+        <div class="pestanas" id="pestanas-ronda" role="tablist" aria-label="Rondas del torneo"></div>
+        <table>
+          <caption class="sr-solo">Partidas de la ronda seleccionada</caption>
+          <thead>
+            <tr>
+              <th scope="col">Enfrentamiento</th>
+              <th scope="col">Horario</th>
+              <th scope="col">Estado</th>
+            </tr>
+          </thead>
+          <tbody id="cuerpo-partidas"></tbody>
+        </table>
+      </div>
+
+      <div class="seccion" aria-labelledby="titulo-posiciones">
+        <h2 id="titulo-posiciones">Tabla de posiciones</h2>
+        <table>
+          <caption class="sr-solo">Tabla de posiciones del torneo</caption>
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Participante</th>
+              <th scope="col">Puntos</th>
+              <th scope="col">Dif. de puntaje</th>
+            </tr>
+          </thead>
+          <tbody id="cuerpo-ranking"></tbody>
+        </table>
+      </div>
+
+      <div class="seccion" id="seccion-premios" aria-labelledby="titulo-premios" hidden>
+        <h2 id="titulo-premios">Premios</h2>
+        <ul id="lista-premios"></ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie-pagina">
+    <div class="contenedor pie-pagina__contenido">
+      <p>&copy; <span data-anio>2026</span> eSports Arena Manager. Proyecto académico Desarrollo FullStack II.</p>
+      <nav aria-label="Enlaces del pie de página">
+        <a href="torneos.html">Torneos</a> ·
+        <a href="inscripcion.html">Inscripción</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/comun.js"></script>
+  <script src="js/torneo-detalle.js"></script>
+</body>
+</html>
