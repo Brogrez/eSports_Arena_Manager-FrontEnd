@@ -54,3 +54,21 @@
           <option value="finalizado">Finalizado</option>
         </select>
       </div>
+      <div class="campo">
+        <label for="filtro-desde">Cierre desde</label>
+        <input type="date" id="filtro-desde" name="desde" />
+      </div>
+      <div class="campo">
+        <label for="filtro-hasta">Cierre hasta</label>
+        <input type="date" id="filtro-hasta" name="hasta" />
+        <span class="mensaje-error" id="error-fechas" role="alert"></span>
+      </div>
+    </form>
+
+    <p class="texto-tenue" id="contador-resultados" aria-live="polite"></p>
+
+    <div class="grilla-tarjetas" id="lista-torneos">
+      <!-- Se genera dinámicamente con JavaScript -->
+    </div>
+  </section>
+</main>
