@@ -27,3 +27,33 @@
         <span class="perfil-rol">Perfil de prueba: Jugador</span>
     </div>
 </header>
+<main>
+    <section class="seccion contenedor">
+        <div class="seccion__titulo-grupo">
+            <h1>Inscripción a torneo</h1>
+            <p>Completa el formulario para registrar tu participación como jugador individual o representando a un equipo.</p>
+        </div>
+
+        <div class="flex" style="align-items:flex-start; gap:2rem; flex-wrap:wrap;">
+            <form class="formulario" id="form-inscripcion" novalidate>
+                <div class="campo">
+                    <label for="campo-torneo">Torneo</label>
+                    <select id="campo-torneo" name="torneo" required autocomplete="off">
+                        <option value="">Selecciona un torneo</option>
+                    </select>
+                    <span class="mensaje-error" id="error-torneo" role="alert"></span>
+                </div>
+
+                <div class="campo">
+                    <span id="etiqueta-tipo">Tipo de participante</span>
+                    <div class="fila-radios" role="radiogroup" aria-labelledby="etiqueta-tipo">
+                        <label>
+                            <input type="radio" name="tipoParticipante" value="jugador" checked />
+                            Jugador individual
+                        </label>
+                        <label>
+                            <input type="radio" name="tipoParticipante" value="equipo" />
+                            Equipo
+                        </label>
+                    </div>
+                </div>
