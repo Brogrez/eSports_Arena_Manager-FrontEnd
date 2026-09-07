@@ -27,3 +27,21 @@
     <span class="perfil-rol">Perfil de prueba: Jugador</span>
   </div>
 </header>
+<main>
+  <section class="seccion contenedor">
+    <div class="seccion__titulo-grupo">
+      <h1>Listado de torneos</h1>
+      <p>Filtra por juego, estado o rango de fechas de cierre de inscripción.</p>
+    </div>
+
+    <form class="panel-filtros" id="form-filtros" aria-label="Filtros de búsqueda de torneos">
+      <div class="campo">
+        <label for="filtro-busqueda">Buscar por nombre</label>
+        <input type="search" id="filtro-busqueda" name="busqueda" placeholder="Ej: Copa Apertura" autocomplete="off" />
+      </div>
+      <div class="campo">
+        <label for="filtro-juego">Juego</label>
+        <select id="filtro-juego" name="juego">
+          <option value="">Todos</option>
+        </select>
+      </div>
