@@ -57,3 +57,25 @@
                         </label>
                     </div>
                 </div>
+                <div class="campo" id="campo-jugador">
+                    <label for="campo-jugador-select">Jugador</label>
+                    <select id="campo-jugador-select" name="jugador" autocomplete="off">
+                        <option value="">Selecciona tu perfil</option>
+                    </select>
+                    <span class="ayuda">Perfil de prueba: se simula la sesión seleccionando un jugador del catálogo.</span>
+                </div>
+
+                <div class="campo oculto" id="campo-equipo">
+                    <label for="campo-equipo-select">Equipo</label>
+                    <select id="campo-equipo-select" name="equipo" autocomplete="off">
+                        <option value="">Selecciona tu equipo</option>
+                    </select>
+                    <span class="mensaje-error" id="error-equipo" role="alert"></span>
+                </div>
+
+                <div class="campo">
+                    <label for="campo-edad">Edad del participante responsable</label>
+                    <input type="number" id="campo-edad" name="edad" min="13" max="99" required autocomplete="off" inputmode="numeric" />
+                    <span class="ayuda">Debe estar entre 13 y 99 años.</span>
+                    <span class="mensaje-error" id="error-edad" role="alert"></span>
+                </div>
