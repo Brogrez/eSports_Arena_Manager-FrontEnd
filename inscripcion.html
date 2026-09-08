@@ -79,3 +79,48 @@
                     <span class="ayuda">Debe estar entre 13 y 99 años.</span>
                     <span class="mensaje-error" id="error-edad" role="alert"></span>
                 </div>
+
+                <div class="campo">
+                    <label for="campo-contacto">Correo de contacto</label>
+                    <input type="email" id="campo-contacto" name="contacto" required autocomplete="email" placeholder="nombre@correo.cl" />
+                    <span class="ayuda">Se usará para enviar novedades sobre la inscripción.</span>
+                    <span class="mensaje-error" id="error-contacto" role="alert"></span>
+                </div>
+
+                <div class="campo">
+                    <label>
+                        <input type="checkbox" id="campo-terminos" name="terminos" required />
+                        Confirmo que revisé los requisitos del torneo y acepto el reglamento.
+                    </label>
+                    <span class="mensaje-error" id="error-terminos" role="alert"></span>
+                </div>
+
+                <div class="alerta alerta--bloqueo" id="alerta-bloqueo" role="alert" hidden></div>
+
+                <div class="formulario__acciones">
+                    <button type="submit" class="boton boton-primario" id="boton-inscribir">Confirmar inscripción</button>
+                    <button type="reset" class="boton boton-secundario">Limpiar</button>
+                </div>
+            </form>
+
+            <aside class="tarjeta" style="flex:1; min-width:260px;" aria-labelledby="titulo-resumen">
+                <h2 id="titulo-resumen">Resumen de la inscripción</h2>
+                <dl id="resumen-inscripcion">
+                    <dt class="texto-tenue">Torneo</dt>
+                    <dd id="resumen-torneo">—</dd>
+                    <dt class="texto-tenue">Requisitos</dt>
+                    <dd id="resumen-requisitos">—</dd>
+                    <dt class="texto-tenue">Cupos disponibles</dt>
+                    <dd id="resumen-cupos">—</dd>
+                </dl>
+            </aside>
+        </div>
+
+        <div class="alerta alerta--exito" id="alerta-confirmacion" role="status" hidden>
+            <div>
+                <strong>Inscripción registrada.</strong>
+                <p id="detalle-confirmacion"></p>
+            </div>
+        </div>
+    </section>
+</main>
