@@ -21,4 +21,37 @@ const EAM_UTIL = (() => {
   function obtenerJugadorPorId(jugadorId) {
     return jugadores.find((j) => j.id === jugadorId) || null;
   }
+
+  function cuposDisponibles(torneo) {
+    const disponibles = torneo.cupoMaximo - torneo.cupoOcupado;
+    return disponibles < 0 ? 0 : disponibles;
+  }
+
+  function formatearFecha(fechaISO) {
+    if (!fechaISO) return "Sin fecha";
+    const [anio, mes, dia] = fechaISO.split(/[- ]/);
+    return `${dia}-${mes}-${anio}`;
+  }
+
+  function etiquetaEstado(estado) {
+    const mapa = {
+      abierto: "Abierto",
+      "en-curso": "En curso",
+      finalizado: "Finalizado",
+    };
+    return mapa[estado] || estado;
+  }
+
+  function inscripcionFueraDePlazo(torneo, fechaActualISO = new Date().toISOString().slice(0, 10)) {
+    return fechaActualISO > torneo.fechaCierreInscripcion;
+  }
+
+  function tieneSancionActiva(jugadorId) {
+    return sanciones.some((s) => s.jugadorId === jugadorId && s.vigente);
+  }
+
+  function yaInscrito(torneoId, participanteId) {
+    return inscripciones.some((i) => i.torneoId === torneoId && i.participanteId === participanteId);
+  }
+
 })
