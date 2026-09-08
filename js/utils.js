@@ -54,4 +54,37 @@ const EAM_UTIL = (() => {
     return inscripciones.some((i) => i.torneoId === torneoId && i.participanteId === participanteId);
   }
 
-})
+   function equipoCompleto(equipo) {
+    const juego = obtenerJuegoPorId(equipo.juegoId);
+    if (!juego) return false;
+    return equipo.integrantes.length >= juego.integrantesPorEquipo;
+  }
+
+  function crearElemento(tag, opciones = {}) {
+    const el = document.createElement(tag);
+    if (opciones.texto) el.textContent = opciones.texto;
+    if (opciones.html) el.innerHTML = opciones.html;
+    if (opciones.clase) el.className = opciones.clase;
+    if (opciones.atributos) {
+      Object.entries(opciones.atributos).forEach(([clave, valor]) => el.setAttribute(clave, valor));
+    }
+    return el;
+  }
+
+  return {
+    obtenerNombreJuego,
+    obtenerJuegoPorId,
+    obtenerTorneoPorId,
+    obtenerEquipoPorId,
+    obtenerJugadorPorId,
+    cuposDisponibles,
+    formatearFecha,
+    etiquetaEstado,
+    inscripcionFueraDePlazo,
+    tieneSancionActiva,
+    yaInscrito,
+    equipoCompleto,
+    crearElemento,
+  };
+
+})();
